@@ -1,6 +1,6 @@
 {
-	"name": "Bluetooth Test",
-	"description": "Test Chrome OS Bluetooth API",
+	"name": "Bluetooth Socket Test",
+	"description": "Test Chrome OS Bluetooth Socket API",
 	"version": "1.0.0",
 	"manifest_version": 2,
 	"minimum_chrome_version": "28",
@@ -10,6 +10,7 @@
 		}
 	},
 	"bluetooth": {
-		"uuids": [ "1101", "9990", "9991" ]
+		"uuids": [ "1101", "9990", "9991" ],
+		"socket": true
 	}
 }

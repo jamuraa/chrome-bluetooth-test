@@ -320,7 +320,7 @@ test.BluetoothServer.prototype.start = function() {
 
 		if (self.protocol == 'rfcomm') {
 			chrome.bluetoothSocket.listenUsingRfcomm(
-				socketInfo.socketId, self.uuid, self.channel,
+				socketInfo.socketId, self.uuid, {channel: self.channel},
 				function() {
 					if (chrome.runtime.lastError) {
 						test.error('[' + self.socketId + '] Listen failed: ' +
@@ -338,7 +338,7 @@ test.BluetoothServer.prototype.start = function() {
 				});
 		} else if (self.protocol == 'l2cap') {
 			chrome.bluetoothSocket.listenUsingL2cap(
-				socketInfo.socketId, self.uuid, self.psm,
+				socketInfo.socketId, self.uuid, {psm: self.psm},
 				function() {
 					if (chrome.runtime.lastError) {
 						test.error('[' + self.socketId + '] Listen failed: ' +
